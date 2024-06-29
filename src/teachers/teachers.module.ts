@@ -2,11 +2,8 @@ import { Module } from '@nestjs/common';
 import { TeachersService } from './teachers.service';
 import { TeachersController } from './teachers.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Teacher, TeacherSchema } from 'src/teachers/schema/teacher.schema';
-import {
-  TeacherRank,
-  TeacherRankSchema,
-} from 'src/teachers/schema/teacher-rank.schema';
+import { Teacher, TeacherSchema } from './schema/teacher.schema';
+import { TeacherRank, TeacherRankSchema } from './schema/teacher-rank.schema';
 
 @Module({
   imports: [

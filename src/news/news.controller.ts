@@ -3,14 +3,14 @@ import {
   Get,
   Post,
   Body,
-  Param,
-  Delete,
-  Put,
+  // Param,
+  // Delete,
+  // Put,
   UseGuards,
 } from '@nestjs/common';
 import { NewsService } from './news.service';
 import { CreateNewsDto } from './dto/create-news.dto';
-import { UpdateNewsDto } from './dto/update-news.dto';
+// import { UpdateNewsDto } from './dto/update-news.dto';
 // import { CommentsService } from 'src/comments/comments.service';
 import { Roles } from 'src/auth/decorator/roles.decorator';
 import { Role } from 'src/enums/role.enum';
@@ -31,12 +31,12 @@ export class NewsController {
   // createNewSType(@Body() data: { title: string }) {
   //   return this.newsService.createNewType(data);
   // }
-  // @Roles(Role.ADMIN)
-  // @UseGuards(JwtAuthGuard, RolesGuard)
-  // @Post()
-  // create(@Body() createNewsDto: CreateNewsDto) {
-  //   return this.newsService.create(createNewsDto);
-  // }
+  @Roles(Role.ADMIN)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Post()
+  create(@Body() createNewsDto: CreateNewsDto) {
+    return this.newsService.create(createNewsDto);
+  }
   @Get()
   findAll() {
     return this.newsService.findAll();
