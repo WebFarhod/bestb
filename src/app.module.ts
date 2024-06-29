@@ -7,8 +7,6 @@ import { AuthModule } from './auth/auth.module';
 import { TeachersModule } from './teachers/teachers.module';
 import { MessageModule } from './message/message.module';
 import { ContactModule } from './contact/contact.module';
-import { CommentsModule } from './comments/comments.module';
-import { NewsModule } from './news/news.module';
 
 @Module({
   imports: [
@@ -17,11 +15,11 @@ import { NewsModule } from './news/news.module';
     TeachersModule,
     // ClassesModule,
     // ProgramsModule,
-    NewsModule,
+    // NewsModule,
     // FilesModule,
     UsersModule,
     ContactModule,
-    CommentsModule,
+    // CommentsModule,
     MessageModule,
     // OptionsModule,
     AuthModule,
