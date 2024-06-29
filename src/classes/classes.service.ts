@@ -16,12 +16,10 @@ export class ClassesService {
     @InjectModel(Teacher.name) private teacherModel: Model<Teacher>,
   ) {}
 
-  // async createClass(data: CreateClassDto) {
-  //   const newClass = new this.classModel(data);
-  //   const res = await newClass.save();
-  //   console.log(res);
-  //   return res;
-  // }
+  async createClass(data: CreateClassDto) {
+    const newClass = new this.classModel(data);
+    return await newClass.save();
+  }
 
   // async updateClass(data: UpdateClassDto) {
   //   const tData = await this.classModel.findById(data._id);
