@@ -35,15 +35,15 @@ export class ClassesController {
   //   return this.classesService.updateClass(data);
   // }
 
-  // @Get()
-  // findAll() {
-  //   return this.classesService.findAll();
-  // }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.classesService.findOne(id);
+  @Get()
+  findAll() {
+    return this.classesService.findAll();
   }
+
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.classesService.findOne(id);
+  // }
 
   // @Roles(Role.ADMIN)
   // @UseGuards(JwtAuthGuard, RolesGuard)

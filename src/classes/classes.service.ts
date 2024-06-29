@@ -34,48 +34,48 @@ export class ClassesService {
   //   return await tData.save();
   // }
 
-  // async findAll() {
-  //   const data = this.classModel.find().exec();
-  //   if (!data) {
-  //     throw new NotFoundException(`Data not found`);
-  //   }
-
-  //   const response = await Promise.all(
-  //     (await data).map(async (doc) => {
-  //       const program = await this.programModel.findById(doc.type).exec();
-  //       const teacher = await this.teacherModel.findById(doc.teacher).exec();
-
-  //       return {
-  //         _id: doc._id.toString(),
-  //         image: doc.image,
-  //         name: doc.name,
-  //         description: doc.description,
-  //         about: doc.about,
-  //         type: doc.type,
-  //         price: program ? program.price : null,
-  //         infos: program ? program.infos : null,
-  //         teacher: teacher
-  //           ? {
-  //               _id: teacher._id.toString(),
-  //               name: teacher.name,
-  //               surname: teacher.surname,
-  //               image: teacher.image,
-  //             }
-  //           : null,
-  //       };
-  //     }),
-  //   );
-
-  //   return response;
-  // }
-
-  findOne(id: string) {
-    const data = this.classModel.findById(id);
+  async findAll() {
+    const data = this.classModel.find().exec();
     if (!data) {
       throw new NotFoundException(`Data not found`);
     }
-    return data;
+
+    const response = await Promise.all(
+      (await data).map(async (doc) => {
+        // const program = await this.programModel.findById(doc.type).exec();
+        // const teacher = await this.teacherModel.findById(doc.teacher).exec();
+
+        return {
+          _id: doc._id.toString(),
+          image: doc.image,
+          name: doc.name,
+          description: doc.description,
+          about: doc.about,
+          type: doc.type,
+          // price: program ? program.price : null,
+          // infos: program ? program.infos : null,
+          // teacher: teacher
+          //   ? {
+          //       _id: teacher._id.toString(),
+          //       name: teacher.name,
+          //       surname: teacher.surname,
+          //       image: teacher.image,
+          //     }
+          //   : null,
+        };
+      }),
+    );
+
+    return response;
   }
+
+  // findOne(id: string) {
+  //   const data = this.classModel.findById(id);
+  //   if (!data) {
+  //     throw new NotFoundException(`Data not found`);
+  //   }
+  //   return data;
+  // }
 
   // async deleteClass(id: string[] | string) {
   //   if (!Array.isArray(id)) {
