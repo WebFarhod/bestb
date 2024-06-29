@@ -8,6 +8,7 @@ import { TeachersModule } from './teachers/teachers.module';
 import { MessageModule } from './message/message.module';
 import { ContactModule } from './contact/contact.module';
 import { OptionsModule } from './options/options.module';
+import { ProgramsModule } from './programs/programs.module';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { OptionsModule } from './options/options.module';
     MongooseModule.forRoot(process.env.MONGODB_CONNECTION_STRING),
     TeachersModule,
     // ClassesModule,
-    // ProgramsModule,
+    ProgramsModule,
     // NewsModule,
     // FilesModule,
     UsersModule,
