@@ -45,10 +45,10 @@ export class ClassesController {
     return this.classesService.findOne(id);
   }
 
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Delete()
-  deleteTeacher(@Body() data) {
-    return this.classesService.deleteClass(data.id);
-  }
+  // @Roles(Role.ADMIN)
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Delete()
+  // deleteTeacher(@Body() data) {
+  //   return this.classesService.deleteClass(data.id);
+  // }
 }
