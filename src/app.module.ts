@@ -10,13 +10,14 @@ import { ContactModule } from './contact/contact.module';
 import { OptionsModule } from './options/options.module';
 import { ProgramsModule } from './programs/programs.module';
 import { FilesModule } from './files/files.module';
+import { ClassesModule } from './classes/classes.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot(process.env.MONGODB_CONNECTION_STRING),
     TeachersModule,
-    // ClassesModule,
+    ClassesModule,
     ProgramsModule,
     // NewsModule,
     FilesModule,

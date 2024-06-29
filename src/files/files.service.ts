@@ -17,13 +17,7 @@ export class FilesService {
           bucketId: process.env.BUCKED_ID,
         })
       ).data;
-      // console.log('====================================');
-      // console.log('authorizationToken', authorizationToken);
-      // console.log('====================================');
       const { buffer } = file;
-      // console.log('====================================');
-      // console.log('buffer', buffer);
-      // console.log('====================================');
       const response = (
         await this.b2.uploadFile({
           uploadUrl: uploadUrl,
@@ -36,12 +30,8 @@ export class FilesService {
       //   fileId: response.fileId,
       //   url: `${'https://f003.backblazeb2.com/file'}/${process.env.BUCKED_NAME}/${response.fileName}`,
       // };
-
       return `${'https://f003.backblazeb2.com/file'}/${process.env.BUCKED_NAME}/${response.fileName}`;
     } catch (error) {
-      // console.log('====================================');
-      // console.log('error', error);
-      // console.log('====================================');
       throw new HttpException(
         'something went wrong',
         HttpStatus.INTERNAL_SERVER_ERROR,

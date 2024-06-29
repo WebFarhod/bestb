@@ -11,7 +11,7 @@ import { UpdateTeacherDto } from './dto/update-teacher.dto';
 export class TeachersService {
   constructor(
     @InjectModel(Teacher.name) private teacherModel: Model<Teacher>,
-    @InjectModel(TeacherRank.name) private rankModal: Model<File>,
+    @InjectModel(TeacherRank.name) private rankModal: Model<TeacherRank>,
   ) {}
   async create(data: CreateTeacherDto) {
     const newUser = new this.teacherModel(data);
