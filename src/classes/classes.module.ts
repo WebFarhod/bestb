@@ -3,7 +3,7 @@ import { ClassesService } from './classes.service';
 import { ClassesController } from './classes.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Class, ClassSchema } from './schema/class.schema';
-import { ProgramSchema, Programs } from 'src/programs/schema/program.schema';
+// import { ProgramSchema, Programs } from 'src/programs/schema/program.schema';
 // import { Teacher, TeacherSchema } from 'src/teachers/schema/teacher.schema';
 
 @Module({
@@ -13,10 +13,10 @@ import { ProgramSchema, Programs } from 'src/programs/schema/program.schema';
         name: Class.name,
         schema: ClassSchema,
       },
-      {
-        name: Programs.name,
-        schema: ProgramSchema,
-      },
+      // {
+      //   name: Programs.name,
+      //   schema: ProgramSchema,
+      // },
       // {
       //   name: Teacher.name,
       //   schema: TeacherSchema,
