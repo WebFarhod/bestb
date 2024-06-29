@@ -28,12 +28,12 @@ export class ClassesController {
     return this.classesService.createClass(data);
   }
 
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Put()
-  updateClass(@Body() data: CreateClassDto) {
-    return this.classesService.updateClass(data);
-  }
+  // @Roles(Role.ADMIN)
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Put()
+  // updateClass(@Body() data: CreateClassDto) {
+  //   return this.classesService.updateClass(data);
+  // }
 
   // @Get()
   // findAll() {

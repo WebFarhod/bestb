@@ -20,19 +20,19 @@ export class ClassesService {
     return await newClass.save();
   }
 
-  async updateClass(data: CreateClassDto) {
-    const tData = await this.classModel.findById(data._id).exec();
-    if (!tData) {
-      throw new NotFoundException(`Data not found`);
-    }
-    tData.image = data.image;
-    tData.name = data.name;
-    tData.description = data.description;
-    tData.about = data.about;
-    tData.type = data.type;
-    tData.teacher = data.teacher;
-    return await tData.save();
-  }
+  // async updateClass(data: CreateClassDto) {
+  //   const tData = await this.classModel.findById(data._id).exec();
+  //   if (!tData) {
+  //     throw new NotFoundException(`Data not found`);
+  //   }
+  //   tData.image = data.image;
+  //   tData.name = data.name;
+  //   tData.description = data.description;
+  //   tData.about = data.about;
+  //   tData.type = data.type;
+  //   tData.teacher = data.teacher;
+  //   return await tData.save();
+  // }
 
   // async findAll() {
   //   const data = this.classModel.find().exec();
