@@ -3,15 +3,14 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 // import * as fs from 'fs';
 import { CreateClassDto } from './dto/create-class.dto';
-import { Classes } from './schema/class.schema';
-import { UpdateClassDto } from './dto/update-class.dto';
+import { Class } from './schema/class.schema';
 import { Programs } from 'src/programs/schema/program.schema';
 import { Teacher } from 'src/teachers/schema/teacher.schema';
-import { ClassResponseType } from './types/classResponse.type';
+// import { ClassResponseType } from './types/classResponse.type';
 @Injectable()
 export class ClassesService {
   constructor(
-    @InjectModel(Classes.name) private classModel: Model<Classes>,
+    @InjectModel(Class.name) private classModel: Model<Class>,
     @InjectModel(Programs.name) private programModel: Model<Programs>,
     @InjectModel(Teacher.name) private teacherModel: Model<Teacher>,
   ) {}

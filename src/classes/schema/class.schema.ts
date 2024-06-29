@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
-export class Classes {
+export class Class {
   @Prop({ required: false })
   image: string;
 
@@ -21,4 +21,4 @@ export class Classes {
   teacher: string;
 }
 
-export const ClassesSchema = SchemaFactory.createForClass(Classes);
+export const ClassSchema = SchemaFactory.createForClass(Class);

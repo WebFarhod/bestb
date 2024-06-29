@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ClassesService } from './classes.service';
 import { ClassesController } from './classes.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Classes, ClassesSchema } from './schema/class.schema';
+import { Class, ClassSchema } from './schema/class.schema';
 import { ProgramSchema, Programs } from 'src/programs/schema/program.schema';
 import { Teacher, TeacherSchema } from 'src/teachers/schema/teacher.schema';
 
@@ -10,8 +10,8 @@ import { Teacher, TeacherSchema } from 'src/teachers/schema/teacher.schema';
   imports: [
     MongooseModule.forFeature([
       {
-        name: Classes.name,
-        schema: ClassesSchema,
+        name: Class.name,
+        schema: ClassSchema,
       },
       {
         name: Programs.name,
