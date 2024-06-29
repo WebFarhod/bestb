@@ -3,7 +3,7 @@ import { NewsService } from './news.service';
 import { NewsController } from './news.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { News, NewsSchema } from './schema/New.schema';
-import { NewsType, NewsTypeSchema } from './schema/NewType.schema';
+// import { NewsType, NewsTypeSchema } from './schema/NewType.schema';
 // import { Comment, CommentSchema } from 'src/comments/schema/comments.schema';
 // import { CommentsService } from 'src/comments/comments.service';
 
@@ -14,10 +14,10 @@ import { NewsType, NewsTypeSchema } from './schema/NewType.schema';
         name: News.name,
         schema: NewsSchema,
       },
-      {
-        name: NewsType.name,
-        schema: NewsTypeSchema,
-      },
+      // {
+      //   name: NewsType.name,
+      //   schema: NewsTypeSchema,
+      // },
       // {
       //   name: Comment.name,
       //   schema: CommentSchema,

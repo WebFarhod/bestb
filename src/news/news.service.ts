@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CreateNewsDto } from './dto/create-news.dto';
+// import { CreateNewsDto } from './dto/create-news.dto';
 // import { UpdateNewsDto } from './dto/update-news.dto';
 import { InjectModel } from '@nestjs/mongoose';
 // import { News } from 'src/schemas/new.schema/New.schema';
@@ -21,14 +21,14 @@ export class NewsService {
     }
     return data;
   }
-  async create(data: CreateNewsDto): Promise<News> {
-    const newData: News = {
-      ...data,
-      author: 'John',
-    };
-    const newUser = new this.newModel(newData);
-    return await newUser.save();
-  }
+  // async create(data: CreateNewsDto): Promise<News> {
+  //   const newData: News = {
+  //     ...data,
+  //     author: 'John',
+  //   };
+  //   const newUser = new this.newModel(newData);
+  //   return await newUser.save();
+  // }
 
   // findOne(id: string) {
   //   const data = this.newModel.findById(id).exec();

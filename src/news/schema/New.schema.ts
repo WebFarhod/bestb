@@ -14,9 +14,6 @@ export class News {
   @Prop({ required: true })
   body: string;
 
-  // @Prop({ required: false, default: 0 })
-  // comment?: number;
-
   @Prop({ required: true })
   author: string;
 
