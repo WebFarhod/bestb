@@ -9,7 +9,6 @@ import { MessageModule } from './message/message.module';
 import { ContactModule } from './contact/contact.module';
 import { OptionsModule } from './options/options.module';
 import { ProgramsModule } from './programs/programs.module';
-import { FilesModule } from './files/files.module';
 import { ClassesModule } from './classes/classes.module';
 
 @Module({
@@ -20,7 +19,7 @@ import { ClassesModule } from './classes/classes.module';
     ClassesModule,
     ProgramsModule,
     // NewsModule,
-    FilesModule,
+    // FilesModule,
     UsersModule,
     ContactModule,
     // CommentsModule,
