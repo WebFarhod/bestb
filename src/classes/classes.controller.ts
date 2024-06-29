@@ -35,16 +35,16 @@ export class ClassesController {
   //   return this.classesService.updateClass(data);
   // }
 
-  // @Get()
-  // findAll(): Promise<ClassResponseType[]> {
-  //   return this.classesService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.classesService.findAll();
+  }
 
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   const teacher = this.classesService.findOne(id);
-  //   return teacher;
-  // }
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    const teacher = this.classesService.findOne(id);
+    return teacher;
+  }
 
   // @Roles(Role.ADMIN)
   // @UseGuards(JwtAuthGuard, RolesGuard)
