@@ -1,8 +1,8 @@
 import {
   Controller,
-  Get,
-  Post,
-  Body,
+  // Get,
+  // Post,
+  // Body,
   // Param,
   // Delete,
   // Put,
@@ -23,14 +23,14 @@ export class NewsController {
     // private readonly commentsService: CommentsService,
   ) {}
 
-  @Get('/type')
-  findAllType() {
-    return this.newsService.findAllType();
-  }
-  @Post('type')
-  createNewSType(@Body() data: { title: string }) {
-    return this.newsService.createNewType(data);
-  }
+  // @Get('/type')
+  // findAllType() {
+  //   return this.newsService.findAllType();
+  // }
+  // @Post('type')
+  // createNewSType(@Body() data: { title: string }) {
+  //   return this.newsService.createNewType(data);
+  // }
 
   // @Roles(Role.ADMIN)
   // @UseGuards(JwtAuthGuard, RolesGuard)

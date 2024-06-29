@@ -76,15 +76,15 @@ export class NewsService {
   //   return data;
   // }
 
-  async createNewType(data: { title: string }) {
-    const newType = new this.newTypeModel(data);
-    return await newType.save();
-  }
-  async findAllType() {
-    const data = await this.newTypeModel.find();
-    if (!data) {
-      throw new NotFoundException(`Data not found`);
-    }
-    return data;
-  }
+  // async createNewType(data: { title: string }) {
+  //   const newType = new this.newTypeModel(data);
+  //   return await newType.save();
+  // }
+  // async findAllType() {
+  //   const data = await this.newTypeModel.find();
+  //   if (!data) {
+  //     throw new NotFoundException(`Data not found`);
+  //   }
+  //   return data;
+  // }
 }
