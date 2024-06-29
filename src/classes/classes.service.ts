@@ -20,20 +20,20 @@ export class ClassesService {
     return await newClass.save();
   }
 
-  // async updateClass(data: UpdateClassDto) {
-  //   const tData = await this.classModel.findById(data._id);
-  //   if (!tData) {
-  //     throw new NotFoundException(`Data not found`);
-  //   }
-  //   tData.image = data.image;
-  //   tData.name = data.name;
-  //   tData.description = data.description;
-  //   tData.about = data.about;
-  //   tData.type = data.type;
-  //   tData.teacher = data.teacher;
+  async updateClass(data: CreateClassDto) {
+    const tData = await this.classModel.findById(data._id);
+    if (!tData) {
+      throw new NotFoundException(`Data not found`);
+    }
+    tData.image = data.image;
+    tData.name = data.name;
+    tData.description = data.description;
+    tData.about = data.about;
+    tData.type = data.type;
+    tData.teacher = data.teacher;
 
-  //   return tData.save();
-  // }
+    return tData.save();
+  }
 
   // async findAll() {
   //   const data = this.classModel.find().exec();
@@ -78,33 +78,33 @@ export class ClassesService {
     return data;
   }
 
-  // async deleteClass(id: string[] | string) {
-  //   if (!Array.isArray(id)) {
-  //     const data = await this.classModel.findByIdAndDelete(id).exec();
-  //     if (!data) {
-  //       throw new NotFoundException(`Data not found`);
-  //     }
-  //     return data;
-  //   }
+  async deleteClass(id: string[] | string) {
+    if (!Array.isArray(id)) {
+      const data = await this.classModel.findByIdAndDelete(id).exec();
+      if (!data) {
+        throw new NotFoundException(`Data not found`);
+      }
+      return data;
+    }
 
-  //   try {
-  //     const deletedCount = await this.classModel.deleteMany({
-  //       _id: { $in: id },
-  //     });
+    try {
+      const deletedCount = await this.classModel.deleteMany({
+        _id: { $in: id },
+      });
 
-  //     if (deletedCount.deletedCount === 0) {
-  //       console.warn('No classs found with the provided IDs');
-  //       throw new NotFoundException(`No classs found with the provided IDs`);
-  //     } else {
-  //       console.log(`${deletedCount.deletedCount} classs deleted successfully`);
+      if (deletedCount.deletedCount === 0) {
+        console.warn('No classs found with the provided IDs');
+        throw new NotFoundException(`No classs found with the provided IDs`);
+      } else {
+        console.log(`${deletedCount.deletedCount} classs deleted successfully`);
 
-  //       throw new NotFoundException(
-  //         `${deletedCount.deletedCount} classs deleted successfully`,
-  //       );
-  //     }
-  //   } catch (error) {
-  //     console.error('Error deleting classs:', error);
-  //     throw error;
-  //   }
-  // }
+        throw new NotFoundException(
+          `${deletedCount.deletedCount} classs deleted successfully`,
+        );
+      }
+    } catch (error) {
+      console.error('Error deleting classs:', error);
+      throw error;
+    }
+  }
 }
