@@ -32,12 +32,12 @@ export class NewsController {
     return this.newsService.createNewType(data);
   }
 
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Post()
-  create(@Body() createNewsDto: CreateNewsDto) {
-    return this.newsService.create(createNewsDto);
-  }
+  // @Roles(Role.ADMIN)
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Post()
+  // create(@Body() createNewsDto: CreateNewsDto) {
+  //   return this.newsService.create(createNewsDto);
+  // }
 
   @Get()
   findAll() {
@@ -59,17 +59,17 @@ export class NewsController {
     return this.newsService.viewNew(id);
   }
 
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Put()
-  update(@Body() updateNewsDto: CreateNewsDto) {
-    return this.newsService.update(updateNewsDto);
-  }
+  // @Roles(Role.ADMIN)
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Put()
+  // update(@Body() updateNewsDto: CreateNewsDto) {
+  //   return this.newsService.update(updateNewsDto);
+  // }
 
-  @Roles(Role.ADMIN)
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.newsService.remove(id);
-  }
+  // @Roles(Role.ADMIN)
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.newsService.remove(id);
+  // }
 }
