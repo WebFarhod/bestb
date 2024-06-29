@@ -5,6 +5,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { TeachersModule } from './teachers/teachers.module';
+import { MessageModule } from './message/message.module';
+import { ContactModule } from './contact/contact.module';
 
 @Module({
   imports: [
@@ -16,9 +18,9 @@ import { TeachersModule } from './teachers/teachers.module';
     // NewsModule,
     // FilesModule,
     UsersModule,
-    // ContactModule,
+    ContactModule,
     // CommentsModule,
-    // MessageModule,
+    MessageModule,
     // OptionsModule,
     AuthModule,
   ],
