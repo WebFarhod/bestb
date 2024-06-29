@@ -3,7 +3,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 // import { UpdateNewsDto } from './dto/update-news.dto';
 import { InjectModel } from '@nestjs/mongoose';
 // import { News } from 'src/schemas/new.schema/New.schema';
-// import { NewsType } from './schema/NewType.schema';
+import { NewsType } from './schema/NewType.schema';
 import { Model } from 'mongoose';
 // import { NewResponseType, SortNews } from './types/newResponse.type';
 import { News } from './schema/New.schema';
@@ -12,7 +12,7 @@ import { News } from './schema/New.schema';
 export class NewsService {
   constructor(
     @InjectModel(News.name) private newModel: Model<News>,
-    // @InjectModel(NewsType.name) private newTypeModel: Model<NewsType>,
+    @InjectModel(NewsType.name) private newTypeModel: Model<NewsType>,
   ) {}
   findAll() {
     const data = this.newModel.find().sort({ createdAt: -1 }).exec();
@@ -66,15 +66,15 @@ export class NewsService {
   //   }
   //   return data;
   // }
-  // async createNewType(data: { title: string }) {
-  //   const newType = new this.newTypeModel(data);
-  //   return await newType.save();
-  // }
-  // async findAllType() {
-  //   const data = await this.newTypeModel.find();
-  //   if (!data) {
-  //     throw new NotFoundException(`Data not found`);
-  //   }
-  //   return data;
-  // }
+  async createNewType(data: { title: string }) {
+    const newType = new this.newTypeModel(data);
+    return await newType.save();
+  }
+  async findAllType() {
+    const data = await this.newTypeModel.find();
+    if (!data) {
+      throw new NotFoundException(`Data not found`);
+    }
+    return data;
+  }
 }

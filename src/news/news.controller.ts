@@ -23,10 +23,10 @@ export class NewsController {
     private readonly newsService: NewsService,
     // private readonly commentsService: CommentsService,
   ) {}
-  // @Get('/type')
-  // findAllType() {
-  //   return this.newsService.findAllType();
-  // }
+  @Get('/type')
+  findAllType() {
+    return this.newsService.findAllType();
+  }
   // @Post('type')
   // createNewSType(@Body() data: { title: string }) {
   //   return this.newsService.createNewType(data);
