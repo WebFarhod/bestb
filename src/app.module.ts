@@ -9,6 +9,7 @@ import { MessageModule } from './message/message.module';
 import { ContactModule } from './contact/contact.module';
 import { OptionsModule } from './options/options.module';
 import { ProgramsModule } from './programs/programs.module';
+import { ClassesModule } from './classes/classes.module';
 // import { ClassesModule } from './classes/classes.module';
 
 @Module({
@@ -16,7 +17,7 @@ import { ProgramsModule } from './programs/programs.module';
     ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot(process.env.MONGODB_CONNECTION_STRING),
     TeachersModule,
-    // ClassesModule,
+    ClassesModule,
     ProgramsModule,
     // NewsModule,
     // FilesModule,
