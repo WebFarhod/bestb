@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Controller,
   Get,
@@ -20,10 +19,10 @@ import { RolesGuard } from 'src/auth/guards/roles.guard';
 
 @Controller('news')
 export class NewsController {
-  // constructor(
-  //   private readonly newsService: NewsService,
-  //   private readonly commentsService: CommentsService,
-  // ) {}
+  constructor(
+    private readonly newsService: NewsService,
+    // private readonly commentsService: CommentsService,
+  ) {}
   // @Get('/type')
   // findAllType() {
   //   return this.newsService.findAllType();
@@ -38,10 +37,10 @@ export class NewsController {
   // create(@Body() createNewsDto: CreateNewsDto) {
   //   return this.newsService.create(createNewsDto);
   // }
-  // @Get()
-  // findAll() {
-  //   return this.newsService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.newsService.findAll();
+  }
   // @Get(':id')
   // async findOne(@Param('id') id: string) {
   //   const comment = await this.commentsService.findAllById(id);

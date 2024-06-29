@@ -1,29 +1,29 @@
-export type NewResponseType = {
-  _id: string;
+// export type NewResponseType = {
+//   _id: string;
 
-  image: string;
+//   image: string;
 
-  title: string;
+//   title: string;
 
-  type: string;
+//   type: string;
 
-  body: string;
+//   body: string;
 
-  author: string;
+//   author: string;
 
-  new: string;
+//   new: string;
 
-  views: string;
-  createdAt: Date;
-};
+//   views: string;
+//   createdAt: Date;
+// };
 
-export type SortNews = {
-  image: string;
-  title: string;
-  type: string;
-  body: string;
-  // comment: number;
-  author: string;
-  views: number;
-  createdAt: Date;
-};
+// export type SortNews = {
+//   image: string;
+//   title: string;
+//   type: string;
+//   body: string;
+//   // comment: number;
+//   author: string;
+//   views: number;
+//   createdAt: Date;
+// };
