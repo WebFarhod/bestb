@@ -50,7 +50,7 @@ export class TeachersService {
     tData.socials = data.socials;
     tData.skills = data.skills;
     tData.infos = data.infos;
-    return tData.save();
+    return await tData.save();
   }
 
   async remove(id: string[] | string) {

@@ -21,7 +21,7 @@ export class ClassesService {
   }
 
   async updateClass(data: CreateClassDto) {
-    const tData = await this.classModel.findById(data._id);
+    const tData = await this.classModel.findById(data._id).exec();
     if (!tData) {
       throw new NotFoundException(`Data not found`);
     }
@@ -31,8 +31,7 @@ export class ClassesService {
     tData.about = data.about;
     tData.type = data.type;
     tData.teacher = data.teacher;
-
-    return tData.save();
+    return await tData.save();
   }
 
   // async findAll() {
