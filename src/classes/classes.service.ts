@@ -2,23 +2,23 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 // import * as fs from 'fs';
-import { CreateClassDto } from './dto/create-class.dto';
+// import { CreateClassDto } from './dto/create-class.dto';
 import { Class } from './schema/class.schema';
-import { Programs } from 'src/programs/schema/program.schema';
+// import { Programs } from 'src/programs/schema/program.schema';
 // import { Teacher } from 'src/teachers/schema/teacher.schema';
 // import { ClassResponseType } from './types/classResponse.type';
 @Injectable()
 export class ClassesService {
   constructor(
     @InjectModel(Class.name) private classModel: Model<Class>,
-    @InjectModel(Programs.name) private programModel: Model<Programs>,
+    // @InjectModel(Programs.name) private programModel: Model<Programs>,
     // @InjectModel(Teacher.name) private teacherModel: Model<Teacher>,
   ) {}
 
-  async createClass(data: CreateClassDto) {
-    const newClass = new this.classModel(data);
-    return await newClass.save();
-  }
+  // async createClass(data: CreateClassDto) {
+  //   const newClass = new this.classModel(data);
+  //   return await newClass.save();
+  // }
 
   // async updateClass(data: CreateClassDto) {
   //   const tData = await this.classModel.findById(data._id).exec();
