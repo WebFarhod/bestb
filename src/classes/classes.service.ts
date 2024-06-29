@@ -5,14 +5,14 @@ import { Model } from 'mongoose';
 import { CreateClassDto } from './dto/create-class.dto';
 import { Class } from './schema/class.schema';
 import { Programs } from 'src/programs/schema/program.schema';
-import { Teacher } from 'src/teachers/schema/teacher.schema';
+// import { Teacher } from 'src/teachers/schema/teacher.schema';
 // import { ClassResponseType } from './types/classResponse.type';
 @Injectable()
 export class ClassesService {
   constructor(
     @InjectModel(Class.name) private classModel: Model<Class>,
     @InjectModel(Programs.name) private programModel: Model<Programs>,
-    @InjectModel(Teacher.name) private teacherModel: Model<Teacher>,
+    // @InjectModel(Teacher.name) private teacherModel: Model<Teacher>,
   ) {}
 
   async createClass(data: CreateClassDto) {

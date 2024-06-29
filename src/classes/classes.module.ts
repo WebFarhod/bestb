@@ -4,7 +4,7 @@ import { ClassesController } from './classes.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Class, ClassSchema } from './schema/class.schema';
 import { ProgramSchema, Programs } from 'src/programs/schema/program.schema';
-import { Teacher, TeacherSchema } from 'src/teachers/schema/teacher.schema';
+// import { Teacher, TeacherSchema } from 'src/teachers/schema/teacher.schema';
 
 @Module({
   imports: [
@@ -17,10 +17,10 @@ import { Teacher, TeacherSchema } from 'src/teachers/schema/teacher.schema';
         name: Programs.name,
         schema: ProgramSchema,
       },
-      {
-        name: Teacher.name,
-        schema: TeacherSchema,
-      },
+      // {
+      //   name: Teacher.name,
+      //   schema: TeacherSchema,
+      // },
     ]),
   ],
   controllers: [ClassesController],
