@@ -4,8 +4,8 @@ import {
   Post,
   Body,
   Param,
-  Delete,
-  Put,
+  // Delete,
+  // Put,
   UseGuards,
 } from '@nestjs/common';
 import { ClassesService } from './classes.service';

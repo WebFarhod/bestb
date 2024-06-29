@@ -15,13 +15,13 @@ export class NewsService {
     @InjectModel(News.name) private newModel: Model<News>,
     @InjectModel(NewsType.name) private newTypeModel: Model<NewsType>,
   ) {}
-  findAll() {
-    const data = this.newModel.find().sort({ createdAt: -1 }).exec();
-    if (!data) {
-      throw new NotFoundException(`Data not found`);
-    }
-    return data;
-  }
+  // findAll() {
+  //   const data = this.newModel.find().sort({ createdAt: -1 }).exec();
+  //   if (!data) {
+  //     throw new NotFoundException(`Data not found`);
+  //   }
+  //   return data;
+  // }
   // async create(data: CreateNewsDto): Promise<News> {
   //   const newData: News = {
   //     ...data,
@@ -33,14 +33,14 @@ export class NewsService {
   //   return await newUser.save();
   // }
 
-  findOne(id: string) {
-    const data = this.newModel.findById(id).exec();
-    if (!data) {
-      throw new NotFoundException(`Data not found`);
-    }
+  // findOne(id: string) {
+  //   const data = this.newModel.findById(id).exec();
+  //   if (!data) {
+  //     throw new NotFoundException(`Data not found`);
+  //   }
 
-    return data;
-  }
+  //   return data;
+  // }
 
   // async update(data: CreateNewsDto) {
   //   const newData = await this.newModel.findById(data._id);
@@ -54,15 +54,15 @@ export class NewsService {
 
   //   return newData.save();
   // }
-  async viewNew(id: string) {
-    const newData = await this.newModel.findById(id);
-    if (!newData) {
-      throw new NotFoundException(`Data not found`);
-    }
-    newData.views = newData.views + 1;
+  // async viewNew(id: string) {
+  //   const newData = await this.newModel.findById(id);
+  //   if (!newData) {
+  //     throw new NotFoundException(`Data not found`);
+  //   }
+  //   newData.views = newData.views + 1;
 
-    return newData.save();
-  }
+  //   return newData.save();
+  // }
 
   // remove(id: number) {
   //   return `This action removes a #${id} news`;
