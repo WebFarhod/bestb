@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { TeachersModule } from './teachers/teachers.module';
 import { MessageModule } from './message/message.module';
 import { ContactModule } from './contact/contact.module';
+import { OptionsModule } from './options/options.module';
 
 @Module({
   imports: [
@@ -21,7 +22,7 @@ import { ContactModule } from './contact/contact.module';
     ContactModule,
     // CommentsModule,
     MessageModule,
-    // OptionsModule,
+    OptionsModule,
     AuthModule,
   ],
   controllers: [AppController],
