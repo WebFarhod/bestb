@@ -86,7 +86,7 @@ export class ClassesService {
     //     //   : null,
     //   };
     // });
-    const transformedData = data.map(stripTypeProperties);
+    const transformedData = await Promise.all(data.map(stripTypeProperties));
     // console.log('====================================');
     // console.log(transformedData);
     // console.log('====================================');
