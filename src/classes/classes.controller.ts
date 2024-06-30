@@ -16,16 +16,10 @@ import { Roles } from 'src/auth/decorator/roles.decorator';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/guards/roles.guard';
 import { Role } from 'src/enums/role.enum';
-// import { TeachersService } from 'src/teachers/teachers.service';
-// import { ProgramsService } from 'src/programs/programs.service';
 
 @Controller('classes')
 export class ClassesController {
-  constructor(
-    private readonly classesService: ClassesService,
-    // private readonly teacherService: TeachersService,
-    // private readonly programService: ProgramsService,
-  ) {}
+  constructor(private readonly classesService: ClassesService) {}
 
   @Roles(Role.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
