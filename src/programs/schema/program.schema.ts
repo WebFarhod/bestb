@@ -7,7 +7,7 @@ class ProgramInfo {
   @Prop({ required: false })
   image?: string;
 }
-@Schema()
+@Schema({ timestamps: true })
 export class Programs {
   @Prop({ required: false })
   image: string;

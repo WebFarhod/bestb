@@ -40,8 +40,8 @@ export class ClassesService {
 
     const response = await Promise.all(
       (await data).map(async (doc) => {
-        const program = await this.programService.findOne(doc.type);
-        const teacher = await this.teacherService.findOne(doc.teacher);
+        // const program = await this.programService.findOne(doc.type);
+        // const teacher = await this.teacherService.findOne(doc.teacher);
 
         return {
           _id: doc._id.toString(),
@@ -50,16 +50,16 @@ export class ClassesService {
           description: doc.description,
           about: doc.about,
           type: doc.type,
-          price: program ? program.price : null,
-          infos: program ? program.infos : null,
-          teacher: teacher
-            ? {
-                _id: teacher._id.toString(),
-                name: teacher.name,
-                surname: teacher.surname,
-                image: teacher.image,
-              }
-            : null,
+          // price: program ? program.price : null,
+          // infos: program ? program.infos : null,
+          // teacher: teacher
+          //   ? {
+          //       _id: teacher._id.toString(),
+          //       name: teacher.name,
+          //       surname: teacher.surname,
+          //       image: teacher.image,
+          //     }
+          //   : null,
         };
       }),
     );
