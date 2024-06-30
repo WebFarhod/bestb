@@ -41,43 +41,43 @@ export class ClassesController {
     return this.classesService.updateClass(data);
   }
 
-  // @Get()
-  // async findAll() {
-  //   const data = await this.classesService.findAll();
-  //   // return data;
-  //   const response = Promise.all(
-  //     data.map(async (doc) => {
-  //       // const program = await this.programService.findOne(doc.type);
-  //       // const teacher = await this.teacherService.findOne(doc.teacher);
+  @Get()
+  async findAll() {
+    const data = await this.classesService.findAll();
+    // return data;
+    const response = Promise.all(
+      data.map(async (doc) => {
+        // const program = await this.programService.findOne(doc.type);
+        // const teacher = await this.teacherService.findOne(doc.teacher);
 
-  //       return {
-  //         _id: doc._id.toString(),
-  //         image: doc.image,
-  //         name: doc.name,
-  //         description: doc.description,
-  //         about: doc.about,
-  //         type: doc.type,
-  //         // price: program ? program.price : null,
-  //         // infos: program ? program.infos : null,
-  //         // price: program ? program.price : null,
-  //         // infos: program ? program.infos : null,
-  //         // teacher: teacher,
-  //         // ? {
-  //         //     _id: teacher._id.toString(),
-  //         //     name: teacher.name,
-  //         //     surname: teacher.surname,
-  //         //     image: teacher.image,
-  //         //   }
-  //         // : null,
-  //       };
-  //     }),
-  //   );
-  //   console.log('====================================');
-  //   console.log(response);
-  //   console.log('====================================');
+        return {
+          _id: doc._id.toString(),
+          image: doc.image,
+          name: doc.name,
+          description: doc.description,
+          about: doc.about,
+          type: doc.type,
+          // price: program ? program.price : null,
+          // infos: program ? program.infos : null,
+          // price: program ? program.price : null,
+          // infos: program ? program.infos : null,
+          // teacher: teacher,
+          // ? {
+          //     _id: teacher._id.toString(),
+          //     name: teacher.name,
+          //     surname: teacher.surname,
+          //     image: teacher.image,
+          //   }
+          // : null,
+        };
+      }),
+    );
+    console.log('====================================');
+    console.log(response);
+    console.log('====================================');
 
-  //   return response;
-  // }
+    return response;
+  }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
