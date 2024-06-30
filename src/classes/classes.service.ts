@@ -46,34 +46,34 @@ export class ClassesService {
       throw new NotFoundException(`Data not found`);
     }
 
-    // const response = await Promise.all(
-    //   (await data).map(async (doc) => {
-    //     // const program = await this.programService.findOne(doc.type);
-    //     // const teacher = await this.teacherService.findOne(doc.teacher);
+    const response = await Promise.all(
+      data.map(async (doc) => {
+        // const program = await this.programService.findOne(doc.type);
+        // const teacher = await this.teacherService.findOne(doc.teacher);
 
-    //     return {
-    //       _id: doc._id.toString(),
-    //       image: doc.image,
-    //       name: doc.name,
-    //       description: doc.description,
-    //       about: doc.about,
-    //       type: doc.type,
-    //       price: program ? program.price : null,
-    //       infos: program ? program.infos : null,
-    //       teacher: teacher
-    //         ? {
-    //             _id: teacher._id.toString(),
-    //             name: teacher.name,
-    //             surname: teacher.surname,
-    //             image: teacher.image,
-    //           }
-    //         : null,
-    //     };
-    //   }),
-    // );
+        return {
+          _id: doc._id.toString(),
+          image: doc.image,
+          name: doc.name,
+          description: doc.description,
+          about: doc.about,
+          type: doc.type,
+          // price: program ? program.price : null,
+          // infos: program ? program.infos : null,
+          // teacher: teacher
+          //   ? {
+          //       _id: teacher._id.toString(),
+          //       name: teacher.name,
+          //       surname: teacher.surname,
+          //       image: teacher.image,
+          //     }
+          //   : null,
+        };
+      }),
+    );
 
-    // return response;
-    return data;
+    return response;
+    // return data;
   }
   async findOne(id: string) {
     const data = await this.classModel.findById(id);
