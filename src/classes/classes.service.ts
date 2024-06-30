@@ -95,7 +95,7 @@ export class ClassesService {
     return data;
   }
   async findOne(id: string) {
-    const data = await this.classModel.findById(id);
+    const data = await this.classModel.findById(id).exec();
     if (!data) {
       throw new NotFoundException(`Data not found`);
     }
