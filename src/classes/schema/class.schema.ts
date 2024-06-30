@@ -19,8 +19,6 @@ export class Class {
   @Prop({ type: String, ref: 'Programs' })
   type: Programs | string;
 
-  // @Prop({ required: false })
-  // teacher: string;
   @Prop({ type: String, ref: 'Teacher' })
   teacher: Teacher | string;
 }
