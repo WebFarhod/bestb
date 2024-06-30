@@ -40,27 +40,27 @@ export class ClassesService {
       throw new NotFoundException(`Data not found`);
     }
 
-    const stripTypeProperties = (doc) => {
-      // const { price, infos } = doc.type;
-      // const { _id, name, surname, image } = doc.teacher;
+    // const stripTypeProperties = (doc) => {
+    //   // const { price, infos } = doc.type;
+    //   // const { _id, name, surname, image } = doc.teacher;
 
-      return {
-        _id: doc._id,
-        image: doc.image,
-        name: doc.name,
-        description: doc.description,
-        about: doc.about,
-        type: doc.type,
-        // price: price,
-        // infos: infos,
-        // teacher: {
-        //   _id: _id.toString(),
-        //   name: name,
-        //   surname: surname,
-        //   image: image,
-        // },
-      };
-    };
+    //   return {
+    //     _id: doc._id,
+    //     image: doc.image,
+    //     name: doc.name,
+    //     description: doc.description,
+    //     about: doc.about,
+    //     type: doc.type,
+    //     // price: price,
+    //     // infos: infos,
+    //     // teacher: {
+    //     //   _id: _id.toString(),
+    //     //   name: name,
+    //     //   surname: surname,
+    //     //   image: image,
+    //     // },
+    //   };
+    // };
 
     // const response = data.map(async (doc) => {
     //   // const program = await this.programService.findOne(doc.type);
@@ -86,13 +86,13 @@ export class ClassesService {
     //     //   : null,
     //   };
     // });
-    const transformedData = await Promise.all(data.map(stripTypeProperties));
+    // const transformedData = await Promise.all(data.map(stripTypeProperties));
     // console.log('====================================');
     // console.log(transformedData);
     // console.log('====================================');
 
-    return transformedData;
-    // return data;
+    // return transformedData;
+    return data;
   }
   async findOne(id: string) {
     const data = await this.classModel.findById(id);
