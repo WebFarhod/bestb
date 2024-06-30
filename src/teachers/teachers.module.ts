@@ -20,5 +20,6 @@ import { TeacherRank, TeacherRankSchema } from './schema/teacher-rank.schema';
   ],
   controllers: [TeachersController],
   providers: [TeachersService],
+  exports: [TeachersService],
 })
 export class TeachersModule {}

@@ -10,7 +10,7 @@ import { ContactModule } from './contact/contact.module';
 import { OptionsModule } from './options/options.module';
 import { ProgramsModule } from './programs/programs.module';
 import { ClassesModule } from './classes/classes.module';
-import { NewsModule } from './news/news.module';
+// import { NewsModule } from './news/news.module';
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { NewsModule } from './news/news.module';
     // TeachersModule,
     ClassesModule,
     ProgramsModule,
-    NewsModule,
+    // NewsModule,
     // FilesModule,
     UsersModule,
     ContactModule,

@@ -4,8 +4,8 @@ import {
   Post,
   Body,
   Param,
-  // Delete,
-  // Put,
+  Delete,
+  Put,
   UseGuards,
 } from '@nestjs/common';
 import { ClassesService } from './classes.service';
@@ -28,12 +28,12 @@ export class ClassesController {
     return this.classesService.createClass(data);
   }
 
-  // @Roles(Role.ADMIN)
-  // @UseGuards(JwtAuthGuard, RolesGuard)
-  // @Put()
-  // updateClass(@Body() data: CreateClassDto) {
-  //   return this.classesService.updateClass(data);
-  // }
+  @Roles(Role.ADMIN)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Put()
+  updateClass(@Body() data: CreateClassDto) {
+    return this.classesService.updateClass(data);
+  }
 
   // @Get()
   // findAll() {
@@ -45,10 +45,10 @@ export class ClassesController {
     return this.classesService.findOne(id);
   }
 
-  // @Roles(Role.ADMIN)
-  // @UseGuards(JwtAuthGuard, RolesGuard)
-  // @Delete()
-  // deleteTeacher(@Body() data) {
-  //   return this.classesService.deleteClass(data.id);
-  // }
+  @Roles(Role.ADMIN)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Delete()
+  deleteTeacher(@Body() data) {
+    return this.classesService.deleteClass(data.id);
+  }
 }
