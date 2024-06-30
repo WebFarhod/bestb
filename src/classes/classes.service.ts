@@ -26,14 +26,14 @@ export class ClassesService {
     return await tData.save();
   }
 
-  // async findAll() {
-  //   const data = this.classModel.find().exec();
-  //   if (!data) {
-  //     throw new NotFoundException(`Data not found`);
-  //   }
+  async findAll() {
+    const data = this.classModel.find().exec();
+    if (!data) {
+      throw new NotFoundException(`Data not found`);
+    }
 
-  //   return data;
-  // }
+    return data;
+  }
 
   findOne(id: string) {
     const data = this.classModel.findById(id);

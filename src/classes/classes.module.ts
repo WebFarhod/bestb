@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { ClassesService } from './classes.service';
 import { ClassesController } from './classes.controller';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -28,8 +28,10 @@ import { ProgramsModule } from 'src/programs/programs.module';
         schema: TeacherSchema,
       },
     ]),
-    TeachersModule,
-    ProgramsModule,
+    // TeachersModule,
+    // ProgramsModule,
+    forwardRef(() => TeachersModule),
+    forwardRef(() => ProgramsModule),
   ],
   controllers: [ClassesController],
   providers: [ClassesService],
