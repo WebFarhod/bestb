@@ -35,10 +35,10 @@ export class ClassesController {
     return this.classesService.updateClass(data);
   }
 
-  // @Get()
-  // findAll() {
-  //   return this.classesService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.classesService.findAll();
+  }
 
   @Get(':id')
   findOne(@Param('id') id: string) {

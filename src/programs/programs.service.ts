@@ -41,7 +41,7 @@ export class ProgramsService {
   }
 
   findOne(id: string) {
-    const data = this.programModel.findById(id).populate(['infos']);
+    const data = this.programModel.findById(id).populate(['infos']).exec();
     if (!data) {
       throw new NotFoundException(`Data not found`);
     }

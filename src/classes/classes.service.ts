@@ -1,22 +1,16 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-// import * as fs from 'fs';
 import { CreateClassDto } from './dto/create-class.dto';
 import { Class } from './schema/class.schema';
-// import { Programs } from 'src/programs/schema/program.schema';
-// import { Teacher } from 'src/teachers/schema/teacher.schema';
 import { TeachersService } from 'src/teachers/teachers.service';
 import { ProgramsService } from 'src/programs/programs.service';
-// import { ClassResponseType } from './types/classResponse.type';
 @Injectable()
 export class ClassesService {
   constructor(
     @InjectModel(Class.name) private classModel: Model<Class>,
     private readonly teacherService: TeachersService,
     private readonly programService: ProgramsService,
-    // @InjectModel(Teacher.name) private teacherModel: Model<Teacher>,
-    // @InjectModel(Programs.name) private programModel: Model<Programs>,
   ) {}
 
   async createClass(data: CreateClassDto) {
@@ -38,40 +32,40 @@ export class ClassesService {
     return await tData.save();
   }
 
-  // async findAll() {
-  //   const data = this.classModel.find().exec();
-  //   if (!data) {
-  //     throw new NotFoundException(`Data not found`);
-  //   }
+  async findAll() {
+    const data = this.classModel.find().exec();
+    if (!data) {
+      throw new NotFoundException(`Data not found`);
+    }
 
-  //   const response = await Promise.all(
-  //     (await data).map(async (doc) => {
-  //       // const program = await this.programModel.findById(doc.type).exec();
-  //       // const teacher = await this.teacherModel.findById(doc.teacher).exec();
+    const response = await Promise.all(
+      (await data).map(async (doc) => {
+        const program = await this.programService.findOne(doc.type);
+        const teacher = await this.teacherService.findOne(doc.teacher);
 
-  //       return {
-  //         _id: doc._id.toString(),
-  //         image: doc.image,
-  //         name: doc.name,
-  //         description: doc.description,
-  //         about: doc.about,
-  //         type: doc.type,
-  //         // price: program ? program.price : null,
-  //         // infos: program ? program.infos : null,
-  //         // teacher: teacher
-  //         //   ? {
-  //         //       _id: teacher._id.toString(),
-  //         //       name: teacher.name,
-  //         //       surname: teacher.surname,
-  //         //       image: teacher.image,
-  //         //     }
-  //         //   : null,
-  //       };
-  //     }),
-  //   );
+        return {
+          _id: doc._id.toString(),
+          image: doc.image,
+          name: doc.name,
+          description: doc.description,
+          about: doc.about,
+          type: doc.type,
+          price: program ? program.price : null,
+          infos: program ? program.infos : null,
+          teacher: teacher
+            ? {
+                _id: teacher._id.toString(),
+                name: teacher.name,
+                surname: teacher.surname,
+                image: teacher.image,
+              }
+            : null,
+        };
+      }),
+    );
 
-  //   return response;
-  // }
+    return response;
+  }
 
   findOne(id: string) {
     const data = this.classModel.findById(id);
