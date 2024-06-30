@@ -41,10 +41,36 @@ export class ClassesController {
     return this.classesService.updateClass(data);
   }
 
-  @Get()
-  findAll() {
-    return this.classesService.findAll();
-  }
+  // @Get()
+  // async findAll() {
+  //   const data = await this.classesService.findAll();
+
+  //   const response = data.map(async (doc) => {
+  //     const program = await this.programService.findOne(doc.type);
+  //     const teacher = await this.teacherService.findOne(doc.teacher);
+
+  //     return {
+  //       _id: doc._id.toString(),
+  //       image: doc.image,
+  //       name: doc.name,
+  //       description: doc.description,
+  //       about: doc.about,
+  //       type: doc.type,
+  //       price: program ? program.price : null,
+  //       infos: program ? program.infos : null,
+  //       teacher: teacher
+  //         ? {
+  //             _id: teacher._id.toString(),
+  //             name: teacher.name,
+  //             surname: teacher.surname,
+  //             image: teacher.image,
+  //           }
+  //         : null,
+  //     };
+  //   });
+
+  //   return response;
+  // }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
