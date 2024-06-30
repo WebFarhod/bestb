@@ -35,7 +35,7 @@ export class ClassesService {
   //   return data;
   // }
   async findAll() {
-    const data = await this.classModel.find().exec();
+    const data = await this.classModel.find().populate(['teacher']).exec();
     if (!data) {
       throw new NotFoundException(`Data not found`);
     }
