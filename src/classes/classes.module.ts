@@ -9,8 +9,8 @@ import { Teacher, TeacherSchema } from 'src/teachers/schema/teacher.schema';
 // import { TeachersService } from 'src/teachers/teachers.service';
 // import { TeachersService } from 'src/teachers/teachers.service';
 // import { ProgramsService } from 'src/programs/programs.service';
-import { TeachersModule } from 'src/teachers/teachers.module';
-import { ProgramsModule } from 'src/programs/programs.module';
+// import { TeachersModule } from 'src/teachers/teachers.module';
+// import { ProgramsModule } from 'src/programs/programs.module';
 
 @Module({
   imports: [
@@ -30,8 +30,8 @@ import { ProgramsModule } from 'src/programs/programs.module';
     ]),
     // TeachersModule,
     // ProgramsModule,
-    forwardRef(() => TeachersModule),
-    forwardRef(() => ProgramsModule),
+    // forwardRef(() => TeachersModule),
+    // forwardRef(() => ProgramsModule),
   ],
   controllers: [ClassesController],
   providers: [ClassesService],
